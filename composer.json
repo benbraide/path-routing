@@ -1,0 +1,25 @@
+{
+    "name": "benbraide/path-routing",
+    "description": "Resolving laravel routes with created view paths and directory structure",
+    "type": "library",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "benbraide",
+            "email": "benbraide@yahoo.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Benbraide\\PathRouting\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Benbraide\\PathRouting\\Providers\\PathRoutingServiceProvider"
+            ]
+        }
+    }
+}

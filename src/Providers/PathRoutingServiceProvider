@@ -1,0 +1,32 @@
+<?php
+
+namespace Benbraide\PathRouting\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class PathRoutingServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->make('Benbraide\PathRouting\PathRoutingController');
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__.'/../config/path_routing.php' => config_path('path_routing.php'),
+        ]);
+
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+    }
+}
